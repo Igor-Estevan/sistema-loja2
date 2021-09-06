@@ -10,8 +10,8 @@
         <div class="col-md-6 header__right">
           <nav class="menu">
             <ul>
-              <li>Clientes</li>
-              <li>Pedidos</li>
+              <li><router-link :to="{ name: 'clientes' }"> Clientes</router-link></li>
+              <li><router-link :to="{ name: 'pedidos' }"> Pedidos</router-link></li>
             </ul>
           </nav>
         </div>

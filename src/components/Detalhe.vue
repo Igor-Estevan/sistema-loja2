@@ -38,7 +38,18 @@
           </h4>
         </div>
         <div class="col-md-12">
-          <button>Fazer Pedido</button>
+          <button @click="cliente">Fazer Pedido</button>
+        </div>
+        <div class="row">
+          <div v-if="dadosCliente" class="col-md-12 cpf-input">
+            <hr />
+            <Cliente
+              :produtoId="this.id"
+              :valorTotal="this.total"
+              :valorUnitario="this.price"
+              :quantidade="this.quantity"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -47,6 +58,7 @@
 <script>
 export default {
   name: "Detalhe",
+
   data: function () {
     return {
       Detail: "",
@@ -54,9 +66,17 @@ export default {
       finalQuantity: 1,
       preco: "",
       total: 0,
+      dadosCliente: false,
     };
   },
   methods: {
+    cliente: function () {
+      if (!this.dadosCliente) {
+        this.dadosCliente = true;
+      } else {
+        this.dadosCliente = false;
+      }
+    },
     toCalculate: function () {
       this.finalQuantity = this.quantity;
 
@@ -80,7 +100,7 @@ export default {
         });
       if (!result.error) {
         this.Detail = result;
-        this.preco = parseFloat(result.price)
+        this.preco = parseFloat(result.price);
       }
     },
   },
