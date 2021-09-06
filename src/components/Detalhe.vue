@@ -41,9 +41,9 @@
           <button @click="cliente">Fazer Pedido</button>
         </div>
         <div class="row">
-          <div v-if="dadosCliente" class="col-md-12 cpf-input">
+          <div v-if="dadosCliente" class="col-md-12 consulta_cpf">
             <hr />
-            <Cliente
+            <ClientesCadastrados
               :produtoId="this.id"
               :valorTotal="this.total"
               :valorUnitario="this.price"
@@ -56,9 +56,12 @@
   </section>
 </template>
 <script>
+import ClientesCadastrados from "../components/ClientesCadastrados.vue";
 export default {
   name: "Detalhe",
-
+  components: {
+    ClientesCadastrados,
+  },
   data: function () {
     return {
       Detail: "",
@@ -141,5 +144,6 @@ export default {
   font-weight: bold;
   display: block;
   margin: 30px auto;
+  cursor: pointer;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="clientes">
     <Header />
-    <div class="container container-clientes">
+    <div class="container container_clientes">
       <div class="row">
         <div class="col-md-12">
           <h2>Página em Desenvolvimento...</h2>
@@ -24,7 +24,7 @@ export default {
 };
 </script>
 <style>
-.container-clientes {
+.container_clientes {
   text-align: center;
   padding: 100px;
 }

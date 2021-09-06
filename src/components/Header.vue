@@ -10,6 +10,7 @@
         <div class="col-md-6 header__right">
           <nav class="menu">
             <ul>
+              <li><router-link :to="{ name: 'home' }"> Início</router-link></li>
               <li><router-link :to="{ name: 'clientes' }"> Clientes</router-link></li>
               <li><router-link :to="{ name: 'pedidos' }"> Pedidos</router-link></li>
             </ul>
